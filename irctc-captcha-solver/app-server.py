@@ -7,7 +7,8 @@ import easyocr
 from flask import Flask, request, jsonify
 
 # Initialize EasyOCR Reader
-reader = easyocr.Reader(["en"], model_storage_directory="./EasyOCR")
+# Initialize EasyOCR Reader with GPU support
+reader = easyocr.Reader(["en"], gpu=True, model_storage_directory="./EasyOCR")
 
 # Initialize Flask app
 app = Flask(__name__)
